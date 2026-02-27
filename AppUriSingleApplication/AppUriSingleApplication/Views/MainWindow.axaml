@@ -1,0 +1,40 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:AppUriSingleApplication.ViewModels"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+		xmlns:shadui="clr-namespace:ShadUI;assembly=ShadUI"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="AppUriSingleApplication.Views.MainWindow"
+        x:DataType="vm:MainWindowViewModel"
+        Icon="/Assets/avalonia-logo.ico"
+        Title="AppUriSingleApplication">
+
+    <Design.DataContext>
+        <!-- This only sets the DataContext for the previewer in an IDE,
+             to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
+        <vm:MainWindowViewModel/>
+    </Design.DataContext>
+
+	<StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+		<shadui:Card
+			Margin="4"
+			MinWidth="400"
+			HorizontalAlignment="Center"
+			VerticalAlignment="Center"
+			HasShadow="True">
+			<shadui:Card.Header>
+				<StackPanel>
+					<shadui:CardTitle>Token Fake de Autenticação</shadui:CardTitle>
+					<shadui:CardDescription>Este é uma aplicação teste de ter uma única instância e que é invocada por App URI (app-uri-single-application://)</shadui:CardDescription>
+				</StackPanel>
+			</shadui:Card.Header>
+			<TextBlock Text="{Binding Token}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+			<shadui:Card.Footer>
+				<Button Margin="0,20,0,0" Classes="Primary" Command="{Binding GetTokenCommand}" Content="Obter Token!" />
+			</shadui:Card.Footer>
+		</shadui:Card>
+	
+		<shadui:ToastHost Manager="{Binding ToastManager}" />
+	</StackPanel>
+</Window>
