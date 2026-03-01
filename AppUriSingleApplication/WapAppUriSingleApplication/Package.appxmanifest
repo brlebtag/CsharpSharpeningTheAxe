@@ -8,8 +8,8 @@
 
   <Identity
     Name="335c65a6-0ddb-4393-9b50-becc45b7a4f3"
-    Publisher="CN=brleb"
-    Version="1.0.1.0" />
+    Publisher="CN=Lebtag Company"
+    Version="1.0.25.0" />
 
   <Properties>
     <DisplayName>AppUriSingleApplication</DisplayName>
@@ -53,5 +53,6 @@
   <Capabilities>
     <Capability Name="internetClient" />
     <rescap:Capability Name="runFullTrust" />
+    <Capability Name="internetClientServer"/>
   </Capabilities>
 </Package>

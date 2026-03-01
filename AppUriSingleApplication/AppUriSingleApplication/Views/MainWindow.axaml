@@ -29,9 +29,14 @@
 					<shadui:CardDescription>Este é uma aplicação teste de ter uma única instância e que é invocada por App URI (app-uri-single-application://)</shadui:CardDescription>
 				</StackPanel>
 			</shadui:Card.Header>
+
 			<TextBlock Text="{Binding Token}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+
 			<shadui:Card.Footer>
-				<Button Margin="0,20,0,0" Classes="Primary" Command="{Binding GetTokenCommand}" Content="Obter Token!" />
+				<StackPanel HorizontalAlignment="Center" Orientation="Horizontal" Spacing="8">
+					<Button Margin="0,20,0,0" Classes="Primary" Command="{Binding OpenLogFolderCommand}" Content="See Logs" />
+					<Button Margin="0,20,0,0" Classes="Primary" Command="{Binding GetTokenCommand}" Content="Obter Token!" />
+				</StackPanel>
 			</shadui:Card.Footer>
 		</shadui:Card>
 	

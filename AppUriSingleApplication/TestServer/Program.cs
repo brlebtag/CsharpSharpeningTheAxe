@@ -8,6 +8,10 @@ var app = builder.Build();
 
 app.UseHttpsRedirection();
 
-app.MapGet("/", () => Results.Redirect($"app-uri-single-application://callback?token={Guid.NewGuid().ToString()}"));
+app.MapGet("/", () => {
+    Guid uid = Guid.NewGuid();
+    Console.WriteLine($"New token generated {uid.ToString()}");
+    return Results.Redirect($"app-uri-single-application://callback?token={uid.ToString()}");
+});
 
 app.Run();

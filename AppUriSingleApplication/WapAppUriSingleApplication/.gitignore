@@ -34,3 +34,6 @@ msbuild.wrn
 .vs/
 bin/
 bin\\
+*.pfx
+AppPackages/
+BundleArtifacts/
